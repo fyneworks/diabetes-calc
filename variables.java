@@ -39,6 +39,8 @@ public class variables {
                 '}';
     }
 
+
+    // TODO must abstract value needed to reach target BG from activeInsulin
     public double insulinCalc(){
 
         double dosage=0;
@@ -49,12 +51,19 @@ public class variables {
             if (temp >= 0) {
                 dosage = temp / bgPerU;                // add the dosage needed to
             }
+            else
+                dosage = (temp / bgPerU) * (-1);       // if we are below target bg
             temp = this.carbs / this.carbsPerU;
             dosage += temp;
             dosage -= this.activeInsulin;
         }
         else if(this.activeInsulin == 0){
             int temp = this.BG - this.targetBG;
+            if (temp >= 0) {
+                dosage = temp / bgPerU;                // add the dosage needed to
+            }
+            else
+                dosage = (temp / bgPerU) * (-1);       // if we are below target bg
             dosage = temp / this.bgPerU;
             temp = this.carbs / this.carbsPerU;
             dosage += temp;
