@@ -31,8 +31,8 @@ public class Main {
         System.out.print("Active Insulin?\n");
         activeInsulin = input.nextDouble();
 
-        variables test = new variables(BG,targetBG,carbs,fats,protein,carbsPerU,bgPerU, activeInsulin);
-        String kati = test.toString();
-        System.out.println(test.insulinCalc());
+        variables info = new variables(BG,targetBG,carbs,fats,protein,carbsPerU,bgPerU, activeInsulin);
+        String infos = info.toString();
+        System.out.println(info.insulinCalc());
     }
 }
