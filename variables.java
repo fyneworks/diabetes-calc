@@ -1,5 +1,3 @@
-package sample;
-
 public class variables {
 
     private int BG;                      // current blood sugar value
@@ -22,9 +20,6 @@ public class variables {
         this.activeInsulin = activeInsulin;
     }
 
-    /**
-     * fsdfd
-     **/
     @Override
     public String toString() {
         return "variables{" +
@@ -69,7 +64,7 @@ public class variables {
             dosage += temp;
         }
         else
-            System.out.println("Line 59 Error Marie aka activeInsulin");
+            System.out.println("Error in activeInsulin");
         return dosage;
     }
 
